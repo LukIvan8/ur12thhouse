@@ -59,7 +59,7 @@ function DatePicker({
   );
 }
 
-export function SwitchDemo({
+function SwitchDemo({
   open,
   setOpen,
 }: {
