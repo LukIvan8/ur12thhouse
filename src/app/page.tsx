@@ -29,6 +29,7 @@ export default function Home() {
             <CardContent className="flex  gap-4 pt-5 items-center">
               <p className="text-lg font-bold">
                 {dayjs(item.date)
+                  .add(12, "hours")
                   .format("LL")
                   .replace("2023 г.", "")
                   .replace("2024 г.", "")}

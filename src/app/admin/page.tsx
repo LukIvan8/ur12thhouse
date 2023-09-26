@@ -96,6 +96,7 @@ function AdminCard({
       <CardContent className="flex flex-col gap-4 pt-5">
         <p className="text-lg font-bold">
           {dayjs(date)
+            .add(12, "hours")
             .format("LL")
             .replace("2023 г.", "")
             .replace("2024 г.", "")}
