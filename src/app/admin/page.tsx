@@ -96,7 +96,6 @@ function AdminCard({
       <CardContent className="flex flex-col gap-4 pt-5">
         <p className="text-lg font-bold">
           {dayjs(date)
-            .add(12, "hours")
             .format("LL")
             .replace("2023 г.", "")
             .replace("2024 г.", "")}
@@ -159,13 +158,14 @@ export default function AdminPage() {
         onSubmit={(e) => {
           e.preventDefault();
           if (date)
-            create(dayjs(date).toISOString().replace("T", " "), open).then(
-              () => {
-                listAll().then((data) => {
-                  setAds(data);
-                });
-              }
-            );
+            create(
+              dayjs(date).add(18, "hours").toISOString().replace("T", " "),
+              open
+            ).then(() => {
+              listAll().then((data) => {
+                setAds(data);
+              });
+            });
         }}
         className="flex gap-4 flex-wrap justify-center"
       >
